@@ -24,12 +24,9 @@ const firstOccurance = (arr, start,end) => {
         if(arr[mid] === 1){
             index = mid;
             end = mid - 1;
-        }
-
-        if(arr[mid] === 0){
+        } else {
             start = mid + 1;
         }
-        
     }
 
     return index;

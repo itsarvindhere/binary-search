@@ -29,9 +29,7 @@ const nextAlphabeticalElement = (arr, key) => {
         if(arr[mid] > key){
             next = arr[mid];
             end = mid - 1;
-        } 
-
-        if(arr[mid] <= key){
+        } else {
             start = mid + 1;
         }
     }

@@ -46,7 +46,7 @@
     Hence to search on the left side of mid, we have two conditions -
 
     1. If start element < end element ,or,
-    2. If start element is >= mid element
+    2. If start element is > mid element
 
 
     And that's it. This will be enough for the problem.
@@ -75,6 +75,8 @@ const indexOfMinimumElement = (arr) => {
             break;
         }
 
+        // Move towards unsorted part i.e., either left->mid or mid->right
+        // To cover the edge case, also check if start element is less than end element. if it is, then also we need to look at left of mid
         if(arr[start] < arr[end] || arr[start] > arr[mid]){
             end = mid - 1;
         } else{

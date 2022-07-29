@@ -6,7 +6,7 @@
 
     So, for that, initially, we take start as 0th index and end as the 1st index. And now, we check whether the element to find lies between start and end or not. i.e., whether element <= arr[end] or not
 
-    If not that means we need to increment our end. So we can do end = end * 2. 
+    If not that means we need to increment our end. So we can do end = end * 2. and set start = previous end
 
     Again we check if the element is <= arr[end] or not. There will be one case when 
 

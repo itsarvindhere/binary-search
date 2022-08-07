@@ -244,6 +244,13 @@ const findClosestElements2 = (arr, k, x) => {
     while(start < end) {
         let mid = Math.trunc(start + ((end - start)/2));
 
+        /*
+            NOTE - If we find absolute values for diff1 and diff2, it will fail in some test cases
+            So, we have to do -> (x - mid value) and (mid + k value - x)
+
+            To remember this, jsut remember that for right value i.e, for value just outside window (mid + k), X will be on right side of substraction. For left value i.e, value at leftmost point of window (mid). X will be on left side of substraction.
+            
+        */
         let diff1 = x - arr[mid];
         let diff2 = arr[mid + k] - x;
 

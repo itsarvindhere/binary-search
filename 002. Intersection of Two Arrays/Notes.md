@@ -4,8 +4,9 @@ Given two integer arrays nums1 and nums2, return an array of their intersection.
 
 # EXAMPLE
 
-Input: nums1 = [1,2,2,1], nums2 = [2,2]
-Output: [2]
+    Input: nums1 = [1,2,2,1]
+           nums2 = [2,2]
+    Output: [2]
 
 # APPROACH 1 -> BINARY SEARCH
 

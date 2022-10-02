@@ -13,7 +13,8 @@ def findKthPositive(arr, k):
         # If element at mid is not mid + 1, that means there are some missing numbers before mid
         # And Count of missing numbers till mid = (current element at mid - correct element at mid)
 
-        # If count of missing till mid is < k that means we need to look at right side of mid for kth missing
+        # If count of missing till mid is < k 
+        # That means we need to look at right side of mid for kth missing
         if arr[mid] - (mid + 1) < k: start = mid + 1
         # Otherwise, look at the left side of mid
         else: end = mid - 1

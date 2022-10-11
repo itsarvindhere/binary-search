@@ -71,3 +71,13 @@ In simple words ->
 
 		If the indices of duplicate elements are in order -> "odd , even", that means the single element is on the left
 		If the indices of duplicate elements are in order -> "even, odd" then single element is on the right side
+
+
+# BINARY SEARCH APPROACH (LESS LINES OF CODE) - O(LogN)
+
+To move to left of mid we have two conditions -
+
+	1. Mid index is even, and duplicate is on its left
+	2. Mid index is odd, and duplicate is on its right
+
+So we can combine both these conditions in one if statement to reduce the Lines of Code

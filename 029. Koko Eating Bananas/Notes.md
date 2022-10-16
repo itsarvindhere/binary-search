@@ -17,7 +17,10 @@ Return the minimum integer k such that she can eat all the bananas within h hour
 
 We are asked for the minimum per-hour eating speed. So, what we can think of is the range of valid solutions.
 
-For that, the simplest way is to think of scenarios. Forgest about "minimum" for now. Lets say we were asked for simply the eating speed.
+For that, the simplest way is to think of scenarios. 
+
+Forget about "minimum" for now. Lets say we were asked for simply the eating speed.
+
 Then, what can be the possible valid values? Ofcourse those values will be in the range of slowest eating speed to fastest eating speed
 
 	e.g. What can be the slowest possible eating speed?

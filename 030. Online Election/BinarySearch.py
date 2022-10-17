@@ -12,13 +12,13 @@ class TopVotedCandidate:
         
         
         for i,person in enumerate(persons):
-            count[persons[i]] = count.get(persons[i], 0) + 1
+            count[person] = count.get(person, 0) + 1
             
             # Since we are asked to choose the most recently votes candidate in case of a tie
             # We also need to cover the "equals to" part here, not just "greater than"
-            if count[persons[i]] >= mostVotes:
-                mostVotes = count[persons[i]]
-                leadingPerson = persons[i]
+            if count[person] >= mostVotes:
+                mostVotes = count[person]
+                leadingPerson = person
                 
             # Which person was leading at ith time? Add that data to the list
             self.leadingCount.append((times[i], leadingPerson))

@@ -9,6 +9,9 @@ class TopVotedCandidate:
 
         # This will be used to keep track of most votes casted to any person so far
         mostVotes = 0
+
+        # This is used to keep track of the leading person
+        leadingPerson = -1
         
         
         for i,person in enumerate(persons):

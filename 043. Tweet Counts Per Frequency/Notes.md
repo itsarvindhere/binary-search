@@ -39,7 +39,6 @@ tweetCounts.getTweetCountsPerFrequency("minute", "tweet3", 0, 60); // return [2,
 tweetCounts.recordTweet("tweet3", 120);                            // New tweet "tweet3" at time 120
 tweetCounts.getTweetCountsPerFrequency("hour", "tweet3", 0, 210);  // return [4]; chunk [0,210] had 4 tweets
 
-
 # SORTED LIST + BINARY SEARCH APPRAOCH
 
 First, we want a way to keep track of the time values at which each tweet happened. The best way is for each tweet, we can keep a list of time values. So, we will use a map where each key is the "tweet name" and each value is a "list of time values" for that tweet.
@@ -63,3 +62,10 @@ Next, we have to find a way to get the count of the particular tweet in a certai
 	
 	And the number of tweets is => rightmostIndex - leftmostIndex + 1
  
+
+
+# GETTING BETTER SPACE COMPLEXITY FROM ABOVE APPROACH
+
+Instead of creating a new list of chunks and then looping over that list, we can skip this process by simply running a loop same number of times as number of chunks and in each iteration, we first set the start and end values of a chunk and then we apply Binary Search to find the count.
+
+In this way, there is no need to create a separate list of chunks and that will result in a better Space Complexity than the previous approach.

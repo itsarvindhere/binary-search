@@ -55,7 +55,15 @@ Now, all that's left is to generate a random number and then we need to return t
 
 This also means that the random number that we have to generate is between 1 to the total sum of the array given as input.
 
-And whatever number we get, we need to then find what is the closest index to that number. For that, we can use Binary Search since the prefix sum array is always in a sorted order as all numbers are positive.
+And whatever number we get, we need to then find what is the closest index to that number. For that, we can use Binary Search since the prefix sum array is always in a sorted order as all numbers are positive. We will return the "start" value if the random value is not present in prefix sum array because we want the closest element to the right side of any random value.
+
+	Suppose we have a prefix sum array as [1,3,6]
+	
+	If random number generated is 2, then it is closer to both 1 and 3 
+	
+	but we have to go with 3 as the closest number since the probability is higher on right side. 
+	
+	That's why we did not return "end" but rather the "start" value after Binary Search.
 
 *NOTE that in the above image, the number line starts from 0. It is just to show each portion for each weight. But in code, we will calculate prefix sum such that prefix sum array is of the same size as the input array. So there won't be 0 at the first index of prefix sum array.*
 

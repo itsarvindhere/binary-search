@@ -21,7 +21,7 @@ In this concept, we first figure out the range of all the possible values of wha
 
 It is pretty obvious from the given example that it is also possible that we cannot distribute a single candy to each child. It means, the smallest possible valid value for "Maximum Candies each child can get" is 0.
 
-And now, for the largest possible valid value, the hint that the problem gave is "**Each child can take at most one pile of candies**". Since a child can take at most one full pile, it means, if we want to ensure that each child is given same number of candies, the maximum possible valid value is the minimum number of candies in any pile. That's why in first example [5,8,6], the output is 5. Because each pile has 5 or more than 5 candies. So we can distribute 5 candies to each child. But the same is not true for "6" candies. 
+And now, for the largest possible valid value, the hint that the problem gave is "**Each child can take at most one pile of candies**". Since a child can take at most one full pile, it means, the maximum possible valid value can be the maximum candies in any pile.
 
 	And now, we get this range -> [0, max(candies)]
 

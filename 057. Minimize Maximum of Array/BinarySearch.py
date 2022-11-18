@@ -15,8 +15,14 @@ def isValid(x, nums):
             # If num is greater than x, we have to decrement it
             # But we only can use the available buffer
             # That is, the amount by which we have to decrement, should be <= buffer
+                
+            # If the amount by which we have to decrement is > buffer, then we can return False
+            # As there is no way we can make all elements of array <= x in this case
+            if buffer < num - x: return False
+                
+            # Otherwise, if the amount by which we have to decrement is <= buffer
+            # we can use the amount from the available buffer
             buffer -= num - x
-            if buffer < 0: return False
 
     return True
                 

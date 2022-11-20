@@ -23,7 +23,9 @@ def waysToSplit(nums):
     # To find sum of "right" subarray, we just do nums[right] - nums[mid]
         
     # For every i (index where "left" subarray ends)
-    for i in range(0, n):
+    # Since "mid" and "right" subarrays need to have at least one element
+	# The last index of "left" subarray can be up to "n-3" index
+    for i in range(n-2):
         # Each "j" index is the index at which "mid" subarray ends
         for j in range(i + 1, n):
             leftSubarraySum = nums[i]

@@ -38,7 +38,9 @@ def waysToSplit(nums):
         
     # Here, each "i" is the last index of "left" subarray
     # So, for every possible "i" value, we try to see how many ways are there to split
-    for i in range(n):
+    # Since "mid" and "right" subarrays need to have at least one element
+	# The last index of "left" subarray can be up to "n-3" index
+    for i in range(n-2):
             
         # For each "i", we will see what can be the leftmost valid position of "mid" subarray's right boundary
         # That is, how much left we can keep the right boundary of "mid" subarray

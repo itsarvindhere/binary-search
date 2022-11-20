@@ -1,6 +1,5 @@
 def waysToSplit(nums):  
     n = len(nums)
-    mod = pow(10,9) + 7
         
     # First, we convert the given array into a prefix sum array
     for i in range(1, n): nums[i] = nums[i - 1] + nums[i]
@@ -103,7 +102,7 @@ def waysToSplit(nums):
         if rightmostIndex != -1: 
             waysToSplit += (rightmostIndex - leftmostIndex + 1)
 
-    return waysToSplit % mod
+    return ways % 1000000007
 
 nums = [1,2,2,2,5,0]
 

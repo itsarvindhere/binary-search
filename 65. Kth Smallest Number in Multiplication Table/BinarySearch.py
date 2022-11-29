@@ -5,16 +5,23 @@ def countSmaller(x, m, n):
     # Each row is like 
     # i*1, i*2, i*3........ i*n
         
-    # Suppose there are "count" elements that are <= "x"
-    # This means, i * count <= x
-    # In other words, count <= x / i
-    # So, count can be at most "x / i"
+    # Suppose Number of elements <= "x" in a row = z
+    # If z = 1, it means 1 element is <= x which will be i * 1
+    # Similarly, if z = 5, it means 5 elements are <= x which means from i * 1 to  i * 5
+    # Hence, it means, if there are "z" elements <= x
+    # then the largest element which is <= x in that row is "i * z"
+         
+    # Or, i * z <= x
+    # In other words, z <= x / i
+    # This means, the max value of "z" can be "x / i"
         
     # Hence, in each row, there are "x / i" elements smaller than "x"
     # For some test cases "x / i" might become > n
     # But since each row has "n" elements, if "x/i" becomes greater than n
     # That means, all elements of that row are <= x
-    for i in range(1, m + 1): count += min(int(x / i), n)
+    for i in range(1, m + 1):
+        z = int(x / i)
+        count += min(z, n)
     
     return count
                 

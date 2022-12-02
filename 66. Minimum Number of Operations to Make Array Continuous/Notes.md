@@ -68,7 +68,7 @@ One thing that's important is that, in the "start" and "end", the length of arra
 
 Well, there is no need of Binary Search as well if you think a bit.
 
-Because basically, after sorting, all that we are looking for is what is the longest subarray from an element "X" such that the maximum element does not exceed "X + N - 1". Because all the elements in this subarray will be reused if "X" is the minimum element in final continuous array.
+Because basically, after sorting, all that we are looking for is what is the longest subarray that starts with element "X" and the maximum element in this subarray does not exceed "X + N - 1".  Because all the elements in this subarray will be reused if "X" is the minimum element in final continuous array. 
 
 And well, here, we can make use of Sliding Window approach because we are dealing with subarray here and we want the Maximum length subarray such that the maximum element in the subarray is <= (minimum element + n - 1)
  

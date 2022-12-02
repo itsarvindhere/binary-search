@@ -18,8 +18,8 @@ def minOperations(nums):
             
         # Note that here, we are not using "n" which is the old length before we removed duplicates
         # Here we are using len(nums) that is, the new length of the list after removing duplicates
-        start = i
-        end = min(i + len(nums) - 1, len(nums) - 1)
+        start = 0
+        end = len(nums) - 1
             
         rightmostIndex = i
             

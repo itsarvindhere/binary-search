@@ -62,4 +62,13 @@ And that's the idea of this approach.
 Take each element, consider it as minimum, and then find how many elements are already present in the array that are <= element + n - 1. 
 
 One thing that's important is that, in the "start" and "end", the length of array is the length of the new array that we created after removing duplicates. But, the "n" is the length of array originally. Because our continuous array needs to be of length "n". 
+
+
+# SLIDING WINDOW
+
+Well, there is no need of Binary Search as well if you think a bit.
+
+Because basically, after sorting, all that we are looking for is what is the longest subarray from an element "X" such that the maximum element does not exceed "X + N - 1". Because all the elements in this subarray will be reused if "X" is the minimum element in final continuous array.
+
+And well, here, we can make use of Sliding Window approach because we are dealing with subarray here and we want the Maximum length subarray such that the maximum element in the subarray is <= (minimum element + n - 1)
  

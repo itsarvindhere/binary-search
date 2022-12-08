@@ -31,7 +31,8 @@ So, this will be our upper bound.
 
 And so, we got this range [0, max(nums)] in which each value means "distance". And since we want the "Kth" smallest distance, it means, whatever "mid" we get in each Binary Search, we have to then check how many pairs are there that have distance <= mid. If we have K or more pairs with distance <= mid, it simply means either "mid" is the kth smallest distance or the kth smallest distance is on the left side of "mid".
 
-## **HOW TO FIND NUMBER OF PAIRS WITH DISTANCE <= X?**
+# **HOW TO FIND NUMBER OF PAIRS WITH DISTANCE <= X?**
+## **METHOD 1 - USING BINARY SEARCH ITSELF**
 
 Well, the biggest challenge is to find how many pairs are there with disance <= x. Only if there are K or more pairs that have distance <= "mid" then our "mid" value is valid. 
 
@@ -56,3 +57,30 @@ Because, if array is sorted, then for any element, all we want to find is the ri
 	And similarly, we can find for every element, how many pairs will give distance <= "mid"
 	
 And now, all we want to return is whether there are K or more pairs with distance <= mid.
+## **METHOD 2 - USING SLIDING WINDOW**
+
+Wait a minute. How did sliding window come into picture here?
+
+We want to count how many pairs are there with distance <= "mid". And since Array is sorted, we can use Sliding Window. How?
+
+
+	e.g. take an example nums = [1,2,3,4,5,6]
+	
+	Suppose, we want to count how many pairs have distance <= 4
+	
+	See, if we have a window [1,2,3,4] then we see this is a valid window 
+	because the distance between the max and smallest element is still <= 4
+	
+	This also means, there are "3" pairs in total - (1,2), (1,3) and (1,4). So they are simply (index of 4 - index of 1)
+	That is, the (last element's index in window - first element's index in window)
+	
+	Now, if from 1 to 4, we have a valid window. Doesn't it mean from 2 to 4 as well the window is valid? 
+		
+	All we have to ensure is that the smallest and largest window element is having distance <= x and window will be valid
+	
+	And so, all we will do is, if the window is valid, just add the count. 
+	
+	But if it is not, we know that we need to shrink it from left side.
+	
+And in this way, the time complexity of our Helper method will be O(N), as compared to O(NLogN) in case of above approach.
+

@@ -84,3 +84,6 @@ We want to count how many pairs are there with distance <= "mid". And since Arra
 	
 And in this way, the time complexity of our Helper method will be O(N), as compared to O(NLogN) in case of above approach.
 
+## **METHOD 3 - BACK TO BINARY SEARCH BUT OPTIMIZED**
+
+We can optimize the Binary Search Method #1 even further after we got to know that for any new element, all the elements till the last valid rightmost index will be valid too. So, we can make the Binary Search even better by searching after the previous rightmost valid index.

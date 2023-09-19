@@ -2,30 +2,45 @@ def findMin(nums):
     # To remove the duplicates but keep the order
     nums = list(dict.fromkeys(nums))
 
-    minimum = nums[0]
-
+    # Length
     n = len(nums)
-
-    # We can search for the minimum element using Binary Search
-    start = 0
-    end = n - 1
-
-    while start <= end:
-        # If the "start" element is smaller than "end"
-        if nums[start] < nums[end]: return min(minimum, nums[start])
-
-        mid = start + (end - start) // 2
-
-        # IF this mid value is smaller than previous minimum we found
-        # Then update the minimum
-        minimum = min(minimum, nums[mid])
-
-        # Is this "mid" value part of left sorted subarray or right sorted subarray?
-        # If this is part of the left sorted subarray, we will find minimum on right side
-        if nums[mid] >= nums[start]: start = mid + 1
-        # Otherwise, we will find the minimum on the left side
-        else: end = mid - 1
         
+    # Initialize minimum
+    minimum = nums[0]
+        
+    start, end = 0, n - 1
+        
+    while start <= end:
+            
+        # Get the mid index
+        mid = start + (end - start) // 2
+            
+        # Which sorted part "mid" belongs to?
+            
+        # If it belongs to the left sorted part
+        if nums[start] <= nums[mid]:
+                
+            # Since it belongs to left sorted part,
+            # The minimum element in this sorted part is the "start" element
+            # Update minimum if required
+            minimum = min(minimum, nums[start])
+                
+            # Now, we no longer need to care about this left sorted part
+            start = mid + 1
+                
+        # If it belongs to the right sorted part
+        else:
+                
+            # Since it belongs to right sorted part,
+            # The minimum element in this sorted part is the "mid" element
+            # Update minimum if required
+            minimum = min(minimum, nums[mid])
+                
+            # Now, we no longer need to care about this right sorted part
+            end = mid - 1
+                
+        
+    # Return the minimum element
     return minimum
 
 nums = [3,3,0,1]

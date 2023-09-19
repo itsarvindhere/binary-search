@@ -68,9 +68,6 @@ One test case that is failing is [10,1,10,10,10]. So, let's see how to fix that.
 
 In this case, the minimum can be anywhere. It can be on right of mid or on the left of mid.Here, it is on the left side of mid but if we had [3,3,0,3] then it would've been on the right side of mid.
 
-So, to avoid any issues with any test case, we can do one of two things ->
+So, to avoid any issues with any test case, we will increment start and decrement mid and we will do this till we are sure that mid, start and end are not all the same.
 
-    Either Increment "start" pointer by 1
-    Either Decrement "end" pointer by 1
-
-Because what we are trying to do is to make "start" or "end" point to an element that is not the same as other two pointers. Such that our if statements can correctly run.
+And  that's the only extra step required in this problem. The rest of the code is exactly same as for "Find Minimum in Rotated Sorted Array" problem.
